@@ -8,6 +8,7 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import './utils/setupLogging.js';
 import { MeetingService } from './services/MeetingService.js';
 import { AIService } from './services/AIService.js';
 
