@@ -384,4 +384,127 @@ Return ONLY a JSON array with this exact format (no markdown, no explanations):
       ];
     }
   }
+
+  /**
+   * Generate key insights for meeting summary
+   * @param {Object} meetingData - Meeting data including participants, duration, fairness score, transcript
+   * @returns {Promise<Array>} Array of 3 key insights with colors
+   */
+  async generateKeyInsights(meetingData) {
+    try {
+      const { participants = [], duration = 0, fairnessScore = 0, transcript = [] } = meetingData;
+      
+      // Truncate transcript to fit within token limits
+      const truncatedTranscript = this.truncateTranscript(transcript);
+      const hasTranscript = truncatedTranscript.length > 0;
+      
+      let prompt;
+      if (hasTranscript) {
+        prompt = `Based on the following meeting data, generate EXACTLY 3 key insights about the meeting.
+
+Recent Conversation:
+${truncatedTranscript}
+
+Meeting Statistics:
+- Duration: ${Math.floor(duration / 60)} minutes
+- Participants: ${participants.map(p => `${p.name} (${Math.floor(p.speakingTime / 60)}m ${Math.floor(p.speakingTime % 60)}s)`).join(', ')}
+- Fairness Score: ${fairnessScore}/100
+
+Generate 3 diverse, actionable insights:
+1. One about PARTICIPATION/BALANCE (use green color)
+2. One about DISCUSSION QUALITY/CONTENT (use blue color)
+3. One about PROCESS/COLLABORATION (use purple color)
+
+Each insight should be:
+- Specific to THIS meeting
+- Positive or constructive (not negative)
+- Actionable or educational
+- 1-2 sentences maximum
+
+Return ONLY a JSON array with this exact format (no markdown, no explanations):
+[
+  {"text": "First insight about participation", "color": "green"},
+  {"text": "Second insight about discussion quality", "color": "blue"},
+  {"text": "Third insight about process", "color": "purple"}
+]`;
+      } else {
+        // If no transcript, use only statistics
+        prompt = `Based on the following meeting statistics, generate EXACTLY 3 key insights about the meeting.
+
+Meeting Statistics:
+- Duration: ${Math.floor(duration / 60)} minutes
+- Participants: ${participants.map(p => `${p.name} (${Math.floor(p.speakingTime / 60)}m ${Math.floor(p.speakingTime % 60)}s)`).join(', ')}
+- Fairness Score: ${fairnessScore}/100
+
+Note: No conversation transcript was recorded during this meeting.
+
+Generate 3 diverse, actionable insights:
+1. One about PARTICIPATION/BALANCE (use green color)
+2. One about MEETING METRICS (use blue color)
+3. One about IMPROVEMENT OPPORTUNITIES (use purple color)
+
+Each insight should be:
+- Based on the statistics provided
+- Positive or constructive (not negative)
+- Actionable or educational
+- 1-2 sentences maximum
+
+Return ONLY a JSON array with this exact format (no markdown, no explanations):
+[
+  {"text": "First insight about participation", "color": "green"},
+  {"text": "Second insight about metrics", "color": "blue"},
+  {"text": "Third insight about improvements", "color": "purple"}
+]`;
+      }
+
+      const text = await this.generateText(prompt);
+      
+      // Try to parse JSON response
+      try {
+        // Extract JSON if wrapped in markdown code blocks
+        const jsonMatch = text.match(/\[[\s\S]*\]/);
+        if (jsonMatch) {
+          const parsed = JSON.parse(jsonMatch[0]);
+          // Ensure we have exactly 3 items with text and color
+          return parsed.slice(0, 3).map(item => ({
+            text: item.text || "Meeting insight unavailable",
+            color: item.color || "blue"
+          }));
+        }
+        const parsed = JSON.parse(text);
+        return parsed.slice(0, 3).map(item => ({
+          text: item.text || "Meeting insight unavailable",
+          color: item.color || "blue"
+        }));
+      } catch (parseError) {
+        console.error('Error parsing AI insights response:', parseError);
+        // Return fallback insights
+        return [
+          { 
+            text: fairnessScore > 80 
+              ? "Great participation balance achieved across all attendees." 
+              : "Consider encouraging quieter participants to share more.",
+            color: "green" 
+          },
+          { 
+            text: hasTranscript 
+              ? "All participants contributed to the discussion effectively." 
+              : "Enable speech recognition for better meeting insights.",
+            color: "blue" 
+          },
+          { 
+            text: "Queue system helped manage turn-taking efficiently.",
+            color: "purple" 
+          }
+        ];
+      }
+    } catch (error) {
+      console.error('Error generating key insights:', error);
+      return [
+        { text: "Great participation balance achieved.", color: "green" },
+        { text: "All participants contributed to the discussion.", color: "blue" },
+        { text: "Queue system helped manage turn-taking.", color: "purple" }
+      ];
+    }
+  }
 }

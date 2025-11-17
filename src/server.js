@@ -319,6 +319,36 @@ io.on('connection', (socket) => {
     }
   });
 
+  // Get AI key insights
+  socket.on('getKeyInsights', async ({ meetingCode }) => {
+    const meeting = meetingService.getMeeting(meetingCode);
+    if (!meeting) {
+      socket.emit('error', { message: 'Meeting not found' });
+      return;
+    }
+
+    try {
+      const analytics = meeting.calculateAnalytics();
+      const insights = await aiService.generateKeyInsights({
+        participants: Array.from(meeting.participants.values()).map(p => ({
+          name: p.name,
+          speakingTime: p.speakingTime,
+          turnCount: p.turnCount,
+        })),
+        duration: meeting.metricsStartedAt ? (Date.now() - meeting.metricsStartedAt) / 1000 : 0,
+        fairnessScore: analytics.fairnessScore,
+        transcript: meeting.transcript,
+      });
+
+      socket.emit('keyInsights', {
+        insights,
+      });
+    } catch (error) {
+      console.error('[AI] Error generating key insights:', error);
+      socket.emit('error', { message: 'Failed to generate key insights' });
+    }
+  });
+
   // Raise hand / Add to queue
   socket.on('raiseHand', ({ meetingCode, participantId }) => {
     const meeting = meetingService.getMeeting(meetingCode);
@@ -494,15 +524,28 @@ io.on('connection', (socket) => {
   });
 
   // End meeting
-  socket.on('endMeeting', async ({ meetingCode }) => {
+  socket.on('endMeeting', async ({ meetingCode, participantId }) => {
     const meeting = meetingService.getMeeting(meetingCode);
     if (!meeting) {
       socket.emit('error', { message: 'Meeting not found' });
       return;
     }
 
-    const participant = Array.from(meeting.participants.values())
-      .find(p => p.socketId === socket.id);
+    // Find participant by participantId first (handles reconnections), then fall back to socketId
+    let participant = null;
+    if (participantId) {
+      participant = meeting.participants.get(participantId);
+      // Update socketId if found (in case of reconnection)
+      if (participant) {
+        participant.socketId = socket.id;
+      }
+    }
+    
+    // Fall back to socketId lookup if participantId not provided or not found
+    if (!participant) {
+      participant = Array.from(meeting.participants.values())
+        .find(p => p.socketId === socket.id);
+    }
     
     if (!participant || !participant.isHost) {
       socket.emit('error', { message: 'Only moderator can end meeting' });
@@ -524,12 +567,19 @@ io.on('connection', (socket) => {
       })),
     });
     
-    // Generate AI summary using meeting data
+    // Generate AI summary and key insights using meeting data
+    // Include both active and left participants for complete meeting analysis
+    const allParticipants = [
+      ...Array.from(meeting.participants.values()),
+      ...Array.from(meeting.leftParticipants.values())
+    ];
+    
     let aiSummary = null;
+    let keyInsights = null;
     try {
       console.log('[AI] Generating meeting summary...');
       const summaryResult = await aiService.generateMeetingSummary({
-        participants: Array.from(meeting.participants.values()).map(p => ({
+        participants: allParticipants.map(p => ({
           name: p.name,
           speakingTime: p.speakingTime,
           turnCount: p.turnCount,
@@ -545,6 +595,30 @@ io.on('connection', (socket) => {
       console.error('[AI] Failed to generate meeting summary:', error.message);
     }
     
+    // Generate key insights
+    try {
+      console.log('[AI] Generating key insights...');
+      keyInsights = await aiService.generateKeyInsights({
+        participants: allParticipants.map(p => ({
+          name: p.name,
+          speakingTime: p.speakingTime,
+          turnCount: p.turnCount,
+        })),
+        duration: meeting.metricsStartedAt ? (Date.now() - meeting.metricsStartedAt) / 1000 : 0,
+        fairnessScore: summary.analytics.fairnessScore,
+        transcript: meeting.transcript,
+      });
+      console.log('[AI] Key insights generated successfully');
+    } catch (error) {
+      console.error('[AI] Failed to generate key insights:', error.message);
+      // Use fallback insights if generation fails
+      keyInsights = [
+        { text: "Great participation balance achieved.", color: "green" },
+        { text: "All participants contributed to the discussion.", color: "blue" },
+        { text: "Queue system helped manage turn-taking.", color: "purple" }
+      ];
+    }
+    
     // Save transcript to file
     try {
       const fs = await import('fs/promises');
@@ -555,7 +629,10 @@ io.on('connection', (socket) => {
         startTime: meeting.createdAt,
         endTime: new Date(),
         duration: meeting.metricsStartedAt ? (Date.now() - meeting.metricsStartedAt) / 1000 : 0,
-        participants: Array.from(meeting.participants.values()).map(p => ({
+        participants: [
+          ...Array.from(meeting.participants.values()),
+          ...Array.from(meeting.leftParticipants.values())
+        ].map(p => ({
           id: p.id,
           name: p.name,
           isHost: p.isHost,
@@ -586,6 +663,7 @@ io.on('connection', (socket) => {
     io.to(meetingCode).emit('meetingEnded', { 
       summary,
       aiSummary,
+      keyInsights,
     });
     
     // Disconnect all sockets from the meeting room

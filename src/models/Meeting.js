@@ -19,7 +19,8 @@ export class Meeting {
     this.startedAt = null;
     this.metricsStartedAt = null; // When metrics tracking started
     this.endedAt = null;
-    this.participants = new Map(); // Map<participantId, Participant>
+    this.participants = new Map(); // Map<participantId, Participant> - active participants
+    this.leftParticipants = new Map(); // Map<participantId, Participant> - participants who left early
     this.queue = []; // Array of participantIds in queue order
     this.analytics = {
       fairnessScore: 100,
@@ -90,13 +91,24 @@ export class Meeting {
 
   /**
    * Remove participant from meeting
+   * Instead of deleting, move to leftParticipants to preserve their contributions
    */
   removeParticipant(participantId) {
+    const participant = this.participants.get(participantId);
+    if (!participant) return; // Already removed or doesn't exist
+    
     // Remove from queue if present
     this.queue = this.queue.filter(id => id !== participantId);
     this.updateQueuePositions();
     
-    // Remove participant
+    // Mark participant as left and preserve their data
+    participant.leftAt = new Date();
+    participant.isActive = false;
+    participant.isSpeaking = false; // Stop any speaking state
+    participant.socketId = null; // Clear socket ID
+    
+    // Move to leftParticipants instead of deleting
+    this.leftParticipants.set(participantId, participant);
     this.participants.delete(participantId);
     
     // If host left, assign new host (first participant)
@@ -105,6 +117,8 @@ export class Meeting {
       firstParticipant.isHost = true;
       this.hostId = firstParticipant.id;
     }
+    
+    console.log(`Participant ${participant.name} left meeting but data preserved for summary`);
   }
 
   /**
@@ -334,6 +348,7 @@ export class Meeting {
    * Calculate and update fairness metrics
    * Only calculates if metrics have been started
    * CRITICAL: Excludes host from fairness calculations as per research paper requirements
+   * Includes both active and left participants in calculations
    */
   calculateFairnessMetrics() {
     // If metrics haven't started, return default values
@@ -348,9 +363,15 @@ export class Meeting {
       return;
     }
 
-    // Get non-host participants' speaking times (as per research requirements)
-    const nonHostParticipants = Array.from(this.participants.values())
+    // Get non-host participants' speaking times from both active and left participants
+    // (as per research requirements - include all who participated)
+    const activeNonHost = Array.from(this.participants.values())
       .filter(p => !p.isHost);
+    const leftNonHost = Array.from(this.leftParticipants.values())
+      .filter(p => !p.isHost);
+    
+    // Combine active and left participants for fairness calculation
+    const nonHostParticipants = [...activeNonHost, ...leftNonHost];
     
     // Handle edge case: no non-host participants
     if (nonHostParticipants.length === 0) {
@@ -379,12 +400,14 @@ export class Meeting {
 
   /**
    * Get participants array (for API responses)
+   * Includes both active participants and participants who left early
    */
   getParticipantsArray() {
     // Calculate total time based on metrics start time
     const baseTime = this.metricsStartedAt ? this.metricsStartedAt : (this.startedAt || this.createdAt);
     
-    return Array.from(this.participants.values()).map(p => ({
+    // Get active participants
+    const activeParticipants = Array.from(this.participants.values()).map(p => ({
       id: p.id,
       name: p.name,
       speakingTime: Math.round(p.speakingTime),
@@ -401,6 +424,34 @@ export class Meeting {
       isMuted: p.isMuted || false,
       isVideoOff: p.isVideoOff || false,
     }));
+    
+    // Get left participants (preserve their contributions)
+    const leftParticipants = Array.from(this.leftParticipants.values()).map(p => {
+      // Calculate total time up to when they left
+      const leftAt = p.leftAt || new Date();
+      const totalTime = this.metricsStartedAt && p.joinedAt
+        ? Math.round((leftAt - Math.max(this.metricsStartedAt, p.joinedAt)) / 1000)
+        : 0;
+      
+      return {
+        id: p.id,
+        name: p.name,
+        speakingTime: Math.round(p.speakingTime),
+        totalTime: totalTime,
+        isActive: false, // Mark as inactive
+        isSpeaking: false, // Can't be speaking if they left
+        inQueue: false, // Not in queue if they left
+        avatar: p.avatar,
+        isHost: p.isHost,
+        turnCount: p.turnCount,
+        continuousSpeakingTime: 0, // Reset since they left
+        isMuted: true, // Consider them muted since they left
+        isVideoOff: true, // Consider video off since they left
+      };
+    });
+    
+    // Combine active and left participants
+    return [...activeParticipants, ...leftParticipants];
   }
 
   /**
