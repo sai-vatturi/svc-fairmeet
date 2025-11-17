@@ -1,0 +1,35 @@
+{
+  "meetingCode": "916502",
+  "startTime": "2025-11-17T11:33:15.462Z",
+  "endTime": "2025-11-17T11:33:46.936Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763379195462_9o3ykrpb0",
+      "name": "sainadh vatturi",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763379195462_9o3ykrpb0",
+      "participantName": "sainadh vatturi",
+      "startTime": "2025-11-17T11:33:33.463Z",
+      "endTime": "2025-11-17T11:33:33.463Z",
+      "duration": 0,
+      "text": "Hello are the subtitles working Hello are the subtitles working Hello are the subtitles working Hello are the subtitles working I guess yes they are working so that agenda for this meeting is to go through what are paying done today"
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "Unable to generate AI summary at this time."
+}

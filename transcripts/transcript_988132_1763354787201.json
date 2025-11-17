@@ -1,0 +1,190 @@
+{
+  "meetingCode": "988132",
+  "startTime": "2025-11-17T04:41:11.474Z",
+  "endTime": "2025-11-17T04:46:27.200Z",
+  "duration": 257.522,
+  "participants": [
+    {
+      "id": "participant_1763354471473_bgk21j4yf",
+      "name": "Sainadh",
+      "isHost": true,
+      "speakingTime": 2.9989999999999997,
+      "turnCount": 6
+    },
+    {
+      "id": "participant_1763354478752_hdzil8b41",
+      "name": "raghu",
+      "isHost": false,
+      "speakingTime": 21.463999999999988,
+      "turnCount": 13
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:41:37.678Z",
+      "endTime": "2025-11-17T04:41:48.600Z",
+      "duration": 10.922,
+      "text": "hello hello hello hello is my voice audible"
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:00.440Z",
+      "endTime": "2025-11-17T04:42:00.440Z",
+      "duration": 0,
+      "text": "oh yeah it's working fine no issues"
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:14.710Z",
+      "endTime": "2025-11-17T04:42:14.916Z",
+      "duration": 0.206
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:16.712Z",
+      "endTime": "2025-11-17T04:42:17.315Z",
+      "duration": 0.603
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:17.765Z",
+      "endTime": "2025-11-17T04:42:18.064Z",
+      "duration": 0.299
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:20.376Z",
+      "endTime": "2025-11-17T04:42:20.614Z",
+      "duration": 0.238
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:21.718Z",
+      "endTime": "2025-11-17T04:42:21.815Z",
+      "duration": 0.097
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:22.377Z",
+      "endTime": "2025-11-17T04:42:22.566Z",
+      "duration": 0.189
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:24.720Z",
+      "endTime": "2025-11-17T04:42:24.963Z",
+      "duration": 0.243
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:25.379Z",
+      "endTime": "2025-11-17T04:42:25.714Z",
+      "duration": 0.335,
+      "text": "okay so let's start the metrics tracking and see how the matrix are being tracked sub started speaking and currently I'm the only one in the meeting so the fairness should be fair be 100%"
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:31.726Z",
+      "endTime": "2025-11-17T04:42:31.866Z",
+      "duration": 0.14
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:33.966Z",
+      "endTime": "2025-11-17T04:42:34.266Z",
+      "duration": 0.3
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:36.390Z",
+      "endTime": "2025-11-17T04:42:36.666Z",
+      "duration": 0.276
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:37.417Z",
+      "endTime": "2025-11-17T04:42:37.720Z",
+      "duration": 0.303
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:42:39.066Z",
+      "endTime": "2025-11-17T04:42:39.366Z",
+      "duration": 0.3,
+      "text": "yeah as you are the only one in the meeting the fairness should be honoured person as you discussed but let's see which browser is this open this Chrome browser"
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:48.404Z",
+      "endTime": "2025-11-17T04:42:48.666Z",
+      "duration": 0.262
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:42:50.749Z",
+      "endTime": "2025-11-17T04:42:50.920Z",
+      "duration": 0.171,
+      "text": "I would also like to check how the year state box"
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:44:17.507Z",
+      "endTime": "2025-11-17T04:44:17.631Z",
+      "duration": 0.124
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:45:31.909Z",
+      "endTime": "2025-11-17T04:45:32.024Z",
+      "duration": 0.115,
+      "text": "okay how much is the speaking percentage here"
+    },
+    {
+      "participantId": "participant_1763354478752_hdzil8b41",
+      "participantName": "raghu",
+      "startTime": "2025-11-17T04:45:44.922Z",
+      "endTime": "2025-11-17T04:45:45.527Z",
+      "duration": 0.605,
+      "text": "okay how much is the speaking percentage here"
+    },
+    {
+      "participantId": "participant_1763354471473_bgk21j4yf",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-17T04:45:51.929Z",
+      "endTime": "2025-11-17T04:45:52.486Z",
+      "duration": 0.557,
+      "text": "it's around 30% action"
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0.08577022977022972,
+    "recommendations": [
+      "Excellent participation balance! Keep up the good facilitation."
+    ],
+    "interpretation": "excellent"
+  },
+  "aiSummary": "**1. Meeting Discussion Summary**\n\nThe meeting commenced with Raghu confirming audibility, asking \"is my voice audible?\", to which Sainadh promptly responded, \"oh yeah it's working fine no issues.\" Raghu then initiated the main discussion point: \"let's start the metrics tracking and see how the matrix are being tracked.\" He immediately began discussing the concept of \"fairness\" in participation, stating that as he was \"the only one in the meeting\" initially, \"the fairness should be fair be 100%.\" Sainadh concurred, reiterating, \"as you are the only one in the meeting the fairness should be honoured person as you discussed.\"\n\nThe conversation briefly diverted when Sainadh inquired about the browser being used (\"which browser is this open\"), identifying it as \"this Chrome browser.\" Raghu also mentioned wanting \"to check how the year state box\" works. The core focus then shifted to quantifying speaking percentage. Raghu asked multiple times, \"how much is the speaking percentage here,\" with Sainadh ultimately providing an answer: \"it's around 30% action.\" No explicit decisions were made or action items assigned beyond the initial intent to track metrics. The flow was an initial check-in, discussion of a specific metric (fairness), a quick technical check (browser), and then a focus on another metric (speaking percentage).\n\n**2. Meeting Fairness Summary**\n\nThe speaking time distribution for this meeting was significantly imbalanced, with Sainadh speaking for 0 minutes and 2 seconds, while Raghu spoke for 0 minutes and 21 seconds. Despite this disparity in speaking time, the recorded Fairness Score was 100/100. This score, as discussed by the participants at the meeting's outset, likely reflects a specific interpretation of fairness within their testing context rather than an even distribution of speaking time."
+}

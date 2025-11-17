@@ -1,0 +1,35 @@
+{
+  "meetingCode": "142655",
+  "startTime": "2025-11-16T16:27:29.349Z",
+  "endTime": "2025-11-16T16:28:58.719Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763310449348_dnhhxxkdq",
+      "name": "Sainadh",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763310449348_dnhhxxkdq",
+      "participantName": "Sainadh",
+      "startTime": "2025-11-16T16:27:39.832Z",
+      "endTime": "2025-11-16T16:27:39.832Z",
+      "duration": 0,
+      "text": "hello is the microphone working I guess it is working"
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "**1. Meeting Discussion Summary**\nThe meeting began with Sainadh performing an audio equipment check. Sainadh initiated the discussion by asking, \"hello is the microphone working\". This was a direct inquiry into the functionality of their microphone. Following this self-posed question, Sainadh then provided their own assessment, stating, \"I guess it is working\", indicating a presumed successful test of their audio. There were no other participants, so Sainadh was the sole contributor, raising a question and immediately providing a self-determined answer. No decisions were made or action items discussed beyond this basic technical verification. The flow of the conversation was extremely brief and focused entirely on this single, self-addressed technical check.\n\n**2. Meeting Fairness Summary**\nSainadh was the sole participant, accounting for all speaking time (Sainadh: 0m 0s, though they did speak). With a Fairness Score of 100/100, participation was perfectly balanced among the only individual present. Engagement was singular and directed towards a self-verification task."
+}

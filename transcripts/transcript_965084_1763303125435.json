@@ -1,0 +1,26 @@
+{
+  "meetingCode": "965084",
+  "startTime": "2025-11-16T14:25:18.154Z",
+  "endTime": "2025-11-16T14:25:25.434Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763303118153_nk09vulrp",
+      "name": "asfd",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "## Meeting Summary\n\n**1. Overview:**\n\nThis meeting involved one participant, asfd. There was no verbal participation recorded during the allotted time.\n\n**2. Key Observations:**\n\n*   There were no speaking turns or recorded dialogue.\n*   Participant asfd did not verbally contribute during the meeting.\n\n**3. Fairness Analysis:**\n\nThe fairness metrics indicate a perfectly equitable distribution of speaking time, although this is due to a complete lack of participation. The Fairness Score is at its maximum (100/100), Gini Coefficient is at its minimum (0.00), and Participation Entropy is 0.00, reflecting the absence of any vocal interaction.\n\n**4. Recommendations:**\n\n*   **Assess Purpose & Attendance:** Review the necessity of future meetings, especially if participation is consistently absent or minimal. Ensure the meeting objectives are clear to all intended participants.\n*   **Encourage Engagement:** If participation is crucial, proactively solicit input and encourage active engagement from all participants. Consider sending pre-meeting materials to facilitate discussion."
+}

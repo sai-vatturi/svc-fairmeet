@@ -1,0 +1,161 @@
+{
+  "meetingCode": "712039",
+  "startTime": "2025-11-16T15:31:59.740Z",
+  "endTime": "2025-11-16T15:33:28.576Z",
+  "duration": 52.521,
+  "participants": [
+    {
+      "id": "participant_1763307119739_jgulvkooh",
+      "name": "saf",
+      "isHost": true,
+      "speakingTime": 1.3510000000000002,
+      "turnCount": 3
+    },
+    {
+      "id": "participant_1763307148582_sllfrxceh",
+      "name": "Dastagiri",
+      "isHost": false,
+      "speakingTime": 7.221000000000001,
+      "turnCount": 15
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763307119739_jgulvkooh",
+      "participantName": "saf",
+      "startTime": "2025-11-16T15:32:37.243Z",
+      "endTime": "2025-11-16T15:32:37.312Z",
+      "duration": 0.069
+    },
+    {
+      "participantId": "participant_1763307119739_jgulvkooh",
+      "participantName": "saf",
+      "startTime": "2025-11-16T15:32:38.496Z",
+      "endTime": "2025-11-16T15:32:38.661Z",
+      "duration": 0.165
+    },
+    {
+      "participantId": "participant_1763307119739_jgulvkooh",
+      "participantName": "saf",
+      "startTime": "2025-11-16T15:32:39.496Z",
+      "endTime": "2025-11-16T15:32:39.713Z",
+      "duration": 0.217
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:43.252Z",
+      "endTime": "2025-11-16T15:32:43.354Z",
+      "duration": 0.102
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:44.254Z",
+      "endTime": "2025-11-16T15:32:44.401Z",
+      "duration": 0.147
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:45.254Z",
+      "endTime": "2025-11-16T15:32:45.301Z",
+      "duration": 0.047
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:46.502Z",
+      "endTime": "2025-11-16T15:32:46.655Z",
+      "duration": 0.153
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:47.502Z",
+      "endTime": "2025-11-16T15:32:47.701Z",
+      "duration": 0.199
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:48.505Z",
+      "endTime": "2025-11-16T15:32:48.755Z",
+      "duration": 0.25
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:52.992Z",
+      "endTime": "2025-11-16T15:32:53.101Z",
+      "duration": 0.109
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:53.993Z",
+      "endTime": "2025-11-16T15:32:54.154Z",
+      "duration": 0.161
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:54.994Z",
+      "endTime": "2025-11-16T15:32:55.054Z",
+      "duration": 0.06
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:56.995Z",
+      "endTime": "2025-11-16T15:32:57.153Z",
+      "duration": 0.158
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:57.804Z",
+      "endTime": "2025-11-16T15:32:57.901Z",
+      "duration": 0.097
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:32:59.806Z",
+      "endTime": "2025-11-16T15:32:59.852Z",
+      "duration": 0.046
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:33:01.268Z",
+      "endTime": "2025-11-16T15:33:01.355Z",
+      "duration": 0.087
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:33:02.809Z",
+      "endTime": "2025-11-16T15:33:02.854Z",
+      "duration": 0.045
+    },
+    {
+      "participantId": "participant_1763307148582_sllfrxceh",
+      "participantName": "Dastagiri",
+      "startTime": "2025-11-16T15:33:04.999Z",
+      "endTime": "2025-11-16T15:33:05.102Z",
+      "duration": 0.103
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0.17293737276972818,
+    "recommendations": [
+      "Excellent participation balance! Keep up the good facilitation."
+    ],
+    "interpretation": "excellent"
+  },
+  "aiSummary": "This very brief meeting involved 2 participants and had a logged duration of 0 minutes. Despite the 0-minute overall duration, a total of 8 seconds of speaking time was recorded across the participants.\n\n**Participation Patterns & Engagement:**\n\n*   **Dastagiri** was the more active participant, speaking for 7 seconds across 15 turns.\n*   **saf** contributed for 1 second across 3 turns.\n\nBased purely on the speaking times and turns, Dastagiri demonstrated significantly higher engagement in terms of vocal contribution compared to saf, speaking for 7 times longer and taking 5 times more turns.\n\n**Fairness Metrics Discrepancy:**\n\nA notable inconsistency exists within the provided data. While individual speaking times show a clear disparity, the **Fairness Score of 100/100**, **Gini Coefficient of 0.00**, and **Participation Entropy of 0.00** all strongly suggest perfectly equal and balanced participation. These fairness metrics are directly contradictory to the individual speaking time distribution, where Dastagiri spoke considerably more than saf. This suggests a potential miscalculation in the fairness metrics or a specific interpretation not solely based on the raw speaking time and turn data provided.\n\n**Overall Engagement:**\n\nGiven the extremely short recorded speaking time (a total of 8 seconds), the overall engagement level for the \"meeting\" was exceptionally low. While Dastagiri was more active within that brief window, the session was not conducive to substantive discussion or widespread participation."
+}

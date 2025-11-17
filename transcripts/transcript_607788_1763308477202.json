@@ -1,0 +1,50 @@
+{
+  "meetingCode": "607788",
+  "startTime": "2025-11-16T15:53:37.606Z",
+  "endTime": "2025-11-16T15:54:37.202Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763308417605_k950l8017",
+      "name": "Sindh",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    },
+    {
+      "id": "participant_1763308435189_nqdq7e03v",
+      "name": "Raghu",
+      "isHost": false,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763308435189_nqdq7e03v",
+      "participantName": "Raghu",
+      "startTime": "2025-11-16T15:54:05.039Z",
+      "endTime": "2025-11-16T15:54:07.411Z",
+      "duration": 2.372,
+      "text": "Hello Hello Hello Is Hello Is the Hello Is the transcribe Hello Is the transcribing Hello Is the transcribing working Hello Is the transcribing working"
+    },
+    {
+      "participantId": "participant_1763308417605_k950l8017",
+      "participantName": "Sindh",
+      "startTime": "2025-11-16T15:54:22.200Z",
+      "endTime": "2025-11-16T15:54:24.714Z",
+      "duration": 2.514,
+      "text": "Hello Hello Hello Is Hello Is the Hello Vitran the Hello Vitran the transcribe Hello Is the transcribing Hello Is the transcribing working Hello Is the transcribing working"
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "**1. Meeting Discussion Summary**\nThe meeting, lasting 0 minutes, was solely focused on testing the functionality of a transcription service. Raghu initiated the conversation by repeatedly asking, \"Is the transcribing working Hello Is the transcribing working,\" to confirm its operational status. Sindh then followed suit, echoing a similar query, stating, \"Hello Is the transcribing Hello Is the transcribing working,\" though their utterance also included \"Vitran the,\" which might indicate a transcription error or an unclear speech segment rather than a distinct point. The entire discussion consisted of these repeated diagnostic questions from both participants. No answers were provided, no decisions were made, and no action items were discussed; the conversation's sole purpose was to ascertain if the transcribing system was active and functioning.\n\n**2. Meeting Fairness Summary**\nThe participation in this brief interaction was perfectly balanced, as indicated by a Fairness Score of 100/100. Both Sindh and Raghu had 0m 0s of recorded speaking time, reflecting an equally minimal contribution. Despite the brevity, both participants engaged equally by attempting to test the transcription service, resulting in a highly equitable level of engagement."
+}

@@ -1,0 +1,73 @@
+{
+  "meetingCode": "597971",
+  "startTime": "2025-11-17T11:53:49.602Z",
+  "endTime": "2025-11-17T11:55:20.547Z",
+  "duration": 65.016,
+  "participants": [
+    {
+      "id": "participant_1763380429602_e27nhyq2i",
+      "name": "Sainath Vattyri",
+      "isHost": true,
+      "speakingTime": 9.666,
+      "turnCount": 2
+    },
+    {
+      "id": "participant_1763380444843_97bc899yf",
+      "name": "Raghu",
+      "isHost": false,
+      "speakingTime": 12.759000000000002,
+      "turnCount": 2
+    }
+  ],
+  "transcript": [
+    {
+      "participantId": "participant_1763380444843_97bc899yf",
+      "participantName": "Raghu",
+      "startTime": "2025-11-17T11:54:09.434Z",
+      "endTime": "2025-11-17T11:54:11.072Z",
+      "duration": 0,
+      "text": "Hello"
+    },
+    {
+      "participantId": "participant_1763380444843_97bc899yf",
+      "participantName": "Raghu",
+      "startTime": "2025-11-17T11:54:32.160Z",
+      "endTime": "2025-11-17T11:54:32.534Z",
+      "duration": 0.374,
+      "text": "Hello is the microphone actually working or not I hope it is perfectly working and I'm sure it is doing great"
+    },
+    {
+      "participantId": "participant_1763380444843_97bc899yf",
+      "participantName": "Raghu",
+      "startTime": "2025-11-17T11:54:34.162Z",
+      "endTime": "2025-11-17T11:54:34.534Z",
+      "duration": 0.372
+    },
+    {
+      "participantId": "participant_1763380429602_e27nhyq2i",
+      "participantName": "Sainath Vattyri",
+      "startTime": "2025-11-17T11:54:50.045Z",
+      "endTime": "2025-11-17T11:54:50.221Z",
+      "duration": 0.176,
+      "text": "Yes as you said it is perfectly working and there is no issues with the microphone"
+    },
+    {
+      "participantId": "participant_1763380429602_e27nhyq2i",
+      "participantName": "Sainath Vattyri",
+      "startTime": "2025-11-17T11:54:52.181Z",
+      "endTime": "2025-11-17T11:54:52.222Z",
+      "duration": 0.041
+    }
+  ],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0.20623605857821747,
+    "recommendations": [
+      "Excellent participation balance! Keep up the good facilitation."
+    ],
+    "interpretation": "excellent"
+  },
+  "aiSummary": "**1. Meeting Discussion Summary**\n\nThe meeting consisted of a brief microphone check. Raghu initiated the meeting at 5:24:09 PM, asking, \"Hello.\" He then inquired about the functionality of the microphone, expressing his hope and confidence that it was working correctly, stating, \"Hello is the microphone actually working or not I hope it is perfectly working and I'm sure it is doing great.\" Sainath Vattyri responded at 5:24:50 PM, confirming that the microphone was indeed working without issues. He replied, \"Yes as you said it is perfectly working and there is no issues with the microphone.\" The entire discussion was centered around verifying the audio equipment's operability. There were no decisions made or action items discussed beyond confirming the microphone was working. The flow of the conversation was a simple question and answer format to test the microphone.\n\n**2. Meeting Fairness Summary**\n\nParticipation was balanced, with Raghu speaking for approximately 12 seconds and Sainath Vattyri for 9 seconds. The Fairness Score is 100/100, indicating equitable contribution. Both participants engaged appropriately for the purpose of the meeting, which was solely to confirm the microphone's functionality."
+}

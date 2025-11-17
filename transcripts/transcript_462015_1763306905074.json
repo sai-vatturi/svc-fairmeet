@@ -1,0 +1,26 @@
+{
+  "meetingCode": "462015",
+  "startTime": "2025-11-16T15:27:53.935Z",
+  "endTime": "2025-11-16T15:28:25.072Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763306873935_y9sd5rb5s",
+      "name": "Sainadh",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "This meeting was characterized by a complete absence of activity. Lasting 0 minutes, it registered only one participant, Sainadh, who made no speaking contributions (0 turns, 0 minutes).\n\n**Participation Patterns & Engagement Levels:**\nDue to the meeting's zero duration and the lack of any verbal input, there was no discernible participation or engagement from the sole attendee. The fairness metrics (100/100 Fairness Score, 0.00 Gini Coefficient, 0.00 Participation Entropy) perfectly reflect this complete lack of dialogue, indicating that everyone (or in this case, no one) contributed equally to the non-existent conversation."
+}

@@ -1,0 +1,33 @@
+{
+  "meetingCode": "617739",
+  "startTime": "2025-11-16T14:30:12.344Z",
+  "endTime": "2025-11-16T14:32:01.929Z",
+  "duration": 0,
+  "participants": [
+    {
+      "id": "participant_1763303412344_d860ug0zh",
+      "name": "Sainadh",
+      "isHost": true,
+      "speakingTime": 0,
+      "turnCount": 0
+    },
+    {
+      "id": "participant_1763303447175_mnpw1lrq2",
+      "name": "Raghu",
+      "isHost": false,
+      "speakingTime": 0,
+      "turnCount": 0
+    }
+  ],
+  "transcript": [],
+  "analytics": {
+    "fairnessScore": 100,
+    "giniCoefficient": 0,
+    "participationEntropy": 0,
+    "dominanceIndex": 0,
+    "recommendations": [
+      "Metrics tracking not started yet"
+    ]
+  },
+  "aiSummary": "## Meeting Summary\n\n**Overview:**\n\nThis meeting involved two participants, Sainadh and Raghu. However, based on the data, no discussion occurred as both participants had zero recorded speaking time.\n\n**Key Observations:**\n\n*   There was no verbal contribution from either Sainadh or Raghu during the allotted meeting duration.\n*   The meeting appears to have been either very short, silent, or there were technical issues preventing audio capture.\n\n**Fairness Analysis:**\n\nThe fairness metrics indicate a perfect distribution of speaking time (or rather, lack thereof), with a fairness score of 100/100, a Gini coefficient of 0.00, and participation entropy of 0.00. This is a direct consequence of neither participant speaking.\n\n**Recommendations:**\n\n*   **Investigate Technical Issues:** If the meeting was intended to have active participation, verify the functionality of the audio recording system and participant microphones.\n*   **Clarify Meeting Objectives:** Ensure participants are clear on the purpose of future meetings and are prepared to contribute. Pre-circulating an agenda can facilitate this.\n*   **Encourage Participation:** In future meetings, actively solicit input from all participants to foster a more collaborative environment."
+}
