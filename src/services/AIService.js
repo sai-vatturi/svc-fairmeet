@@ -71,7 +71,12 @@ export class AIService {
    */
   async generateIcebreaker(meetingContext = 'professional team meeting') {
     try {
+      // Add timestamp and random element to ensure variety
+      const randomSeed = Math.floor(Math.random() * 1000000);
+      const timestamp = Date.now();
       const prompt = `Generate ONE short, engaging icebreaker question for a ${meetingContext}.
+
+IMPORTANT: Generate a DIFFERENT question each time. This is request #${randomSeed} at time ${timestamp}.
 
 Requirements:
 - Must be a single question (1-2 lines maximum)
@@ -79,13 +84,17 @@ Requirements:
 - Quick to answer (30 seconds or less)
 - Open-ended but not too personal
 - NO explanations, NO preambles, NO context - ONLY the question
+- MUST be creative and varied - avoid repeating common questions
 
-Examples:
+Examples of DIFFERENT styles to vary:
 "If you could have any superpower for one day, what would it be?"
 "What's the most interesting thing you've learned this week?"
 "If you could meet any historical figure, who would it be?"
+"What's a skill you'd love to master and why?"
+"What's your favorite way to celebrate small wins?"
+"If you could instantly become an expert in something, what would it be?"
 
-Return ONLY the question, nothing else.`;
+Generate a NEW, UNIQUE question now (different from examples). Return ONLY the question, nothing else.`;
 
       const text = await this.generateText(prompt);
       const cleaned = this.cleanResponse(text);
