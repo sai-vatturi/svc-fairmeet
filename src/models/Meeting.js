@@ -34,6 +34,7 @@ export class Meeting {
       fairnessUpdateInterval: 1000, // 1 second
     };
     this.nudges = []; // Array of nudge objects
+    this.chatMessages = []; // Lightweight meeting chat history
     this.icebreaker = {
       active: false,
       question: null,
@@ -200,6 +201,42 @@ export class Meeting {
       this.transcript.push(newEntry);
       console.log(`[Transcript] Created new entry for ${participant.name}: "${text}"`);
     }
+  }
+
+  /**
+   * Record a chat message for this meeting
+   */
+  addChatMessage(participantId, message) {
+    const participant = this.participants.get(participantId);
+    if (!participant || !message || !message.trim()) {
+      return null;
+    }
+
+    const chatMessage = {
+      id: uuidv4(),
+      participantId,
+      participantName: participant.name,
+      message: message.trim(),
+      timestamp: Date.now(),
+      isHost: participant.isHost,
+    };
+
+    this.chatMessages.push(chatMessage);
+    if (this.chatMessages.length > 200) {
+      this.chatMessages.shift();
+    }
+
+    return chatMessage;
+  }
+
+  /**
+   * Get recent chat messages
+   */
+  getChatMessages(limit = 75) {
+    if (!limit || limit <= 0 || this.chatMessages.length <= limit) {
+      return [...this.chatMessages];
+    }
+    return this.chatMessages.slice(-limit);
   }
 
   /**

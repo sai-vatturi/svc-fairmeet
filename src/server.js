@@ -103,6 +103,7 @@ io.on('connection', (socket) => {
         analytics: meeting.analytics,
         queue: [],
         metricsStarted: !!meeting.metricsStartedAt,
+        chatMessages: meeting.getChatMessages(),
       });
 
       console.log(`Meeting created: ${meeting.code} by ${hostName} (${hostId})`);
@@ -204,6 +205,7 @@ io.on('connection', (socket) => {
           return p ? { id: p.id, name: p.name, position: p.queuePosition } : null;
         }).filter(Boolean),
         metricsStarted: !!meeting.metricsStartedAt,
+        chatMessages: meeting.getChatMessages(),
       });
 
       console.log(`${name} joined meeting ${code}`);
@@ -713,6 +715,17 @@ io.on('connection', (socket) => {
       emoji,
       timestamp: Date.now(),
     });
+  });
+
+  // Lightweight meeting chat
+  socket.on('sendChatMessage', ({ meetingCode, participantId, message }) => {
+    const meeting = meetingService.getMeeting(meetingCode);
+    if (!meeting) return;
+
+    const chatMessage = meeting.addChatMessage(participantId, message);
+    if (!chatMessage) return;
+
+    io.to(meetingCode).emit('chatMessage', chatMessage);
   });
 
   // Participant media state (mic/video)
