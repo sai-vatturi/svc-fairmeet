@@ -1,18 +1,51 @@
 # FairMeet Backend Service
 
-Research-grade backend server for FairMeet - A Human-Centered Meeting Moderation System.
+Research-grade Node.js backend server for FairMeet - A Human-Centered Meeting Moderation System designed to promote equity and fairness in online meetings through real-time analytics and intelligent interventions.
 
-## Features
+## Core Features
 
-- ✅ **Auto-generated 6-digit meeting codes**
-- ✅ **Automatic role assignment** (first person = moderator)
-- ✅ **Real-time WebSocket communication** (Socket.io)
-- ✅ **Research-grade fairness metrics** (Gini coefficient)
-- ✅ **Speaking time tracking**
-- ✅ **Queue management system**
-- ✅ **Private nudge system**
-- ✅ **Long-turn detection**
-- ✅ **Quiet participant identification**
+### 🔐 Meeting Management
+- ✅ **Auto-generated 6-digit meeting codes** - Unique, easy-to-share meeting IDs
+- ✅ **Automatic role assignment** - First participant becomes moderator
+- ✅ **Session persistence** - Meeting state maintained throughout session
+- ✅ **Graceful cleanup** - Automatic cleanup on meeting end or disconnection
+
+### 📡 Real-Time Communication
+- ✅ **WebSocket (Socket.io)** - Bidirectional real-time updates
+- ✅ **Event-driven architecture** - Efficient state synchronization
+- ✅ **Broadcast system** - Selective event distribution (all/moderator/private)
+- ✅ **Connection management** - Robust reconnection and error handling
+
+### 📊 Research-Grade Metrics
+- ✅ **Gini coefficient calculation** - Statistical measure of inequality (0-1 scale)
+- ✅ **Dominance index** - Ratio of max speaker to total duration
+- ✅ **Participation entropy** - Shannon entropy for diversity measurement
+- ✅ **Fairness score** - Composite metric (1 - Gini) for user-friendly display
+- ✅ **Real-time updates** - Metrics recalculated on every speaking status change
+
+### 👤 Participant Tracking
+- ✅ **Speaking time accumulation** - Precise millisecond-level tracking
+- ✅ **Status monitoring** - Speaking/muted/video states
+- ✅ **Queue management** - Raise hand and speaking order
+- ✅ **Activity detection** - Idle and active participant identification
+
+### 🔔 Intelligent Interventions
+- ✅ **Private nudge system** - Contextual prompts to encourage/moderate
+- ✅ **Long-turn detection** - Alert when participant speaks >60s continuously
+- ✅ **Quiet participant identification** - Detect under-participating members
+- ✅ **Moderator notifications** - Real-time alerts for queue and interventions
+
+### 🤖 AI Integration
+- ✅ **Google Gemini API** - AI-powered icebreaker generation
+- ✅ **Randomization system** - Unique questions every time (seed + timestamp)
+- ✅ **Fallback questions** - Graceful degradation if API unavailable
+- ✅ **Contextual prompts** - Meeting-appropriate conversation starters
+
+### 💾 Data Persistence
+- ✅ **Transcript storage** - JSON files saved in `/transcripts` directory
+- ✅ **Meeting summaries** - Complete session data for post-meeting analysis
+- ✅ **Timestamped records** - Chronological event logging
+- ✅ **Research data export** - Structured format for academic analysis
 
 ## Installation
 
